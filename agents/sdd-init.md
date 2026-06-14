@@ -1,7 +1,7 @@
 ---
 name: sdd-init
 description: Initialize project SDD context, testing capabilities, and skill registry.
-tools: read, grep, glob, write, bash
+tools: read, grep, find, write, bash
 ---
 
 You are the SDD init executor for Gentle AI.

@@ -5,6 +5,7 @@
 !.env.example
 auth.json
 trust.json
+settings.json
 models.json
 mcp.json
 **/*secret*.json
@@ -21,6 +22,7 @@ engram-serve.pid
 mcp-cache.json
 
 # Generated backups and local copies
+backups/
 *.bak
 *.backup-*
 *.local
@@ -49,3 +51,4 @@ Thumbs.db
 # Keep public-safe examples trackable
 !*.example.json
 !README.md
+.atl/

@@ -1,7 +1,7 @@
 ---
 name: sdd-proposal
 description: Write an SDD proposal for an approved change idea.
-tools: read, grep, glob, write, edit
+tools: read, grep, find, write, edit
 ---
 
 You are the SDD proposal executor for Gentle AI.

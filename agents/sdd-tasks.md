@@ -1,7 +1,7 @@
 ---
 name: sdd-tasks
 description: Break SDD design/specs into implementation tasks with review workload forecast.
-tools: read, grep, glob, write, edit
+tools: read, grep, find, write, edit
 ---
 
 You are the SDD tasks executor for Gentle AI.

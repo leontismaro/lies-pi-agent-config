@@ -48,6 +48,7 @@ Options:
 
 This script never copies known secret-bearing files such as models.json, mcp.json,
 auth.json, trust.json, sessions, logs, or runtime caches.
+
 USAGE
 }
 
@@ -255,7 +256,7 @@ copy_dir_contents "$REPO_ROOT/extensions" "$TARGET_DIR/extensions"
 copy_dir_contents "$REPO_ROOT/gentle-ai" "$TARGET_DIR/gentle-ai"
 copy_dir_contents "$REPO_ROOT/openspec" "$TARGET_DIR/openspec"
 
-copy_file "$REPO_ROOT/settings.json" "$TARGET_DIR/settings.json"
+copy_file "$REPO_ROOT/settings.example.json" "$TARGET_DIR/settings.json"
 copy_file "$REPO_ROOT/keybindings.json" "$TARGET_DIR/keybindings.json"
 copy_file "$REPO_ROOT/zentui.json" "$TARGET_DIR/zentui.json"
 copy_file "$REPO_ROOT/models.example.json" "$TARGET_DIR/models.example.json"
@@ -274,12 +275,12 @@ if [ "$INSTALL_PACKAGES" -eq 1 ]; then
     copy_file "$REPO_ROOT/npm/package.json" "$TARGET_DIR/npm/package.json"
     copy_file "$REPO_ROOT/npm/package-lock.json" "$TARGET_DIR/npm/package-lock.json"
     if [ "$DRY_RUN" -eq 1 ]; then
-      printf '+ npm --prefix '\''%s'\'' ci --omit=dev\n' "$TARGET_DIR/npm"
+      printf '+ npm --prefix '\''%s'\'' ci --omit=dev --legacy-peer-deps\n' "$TARGET_DIR/npm"
     else
       if [ -f "$TARGET_DIR/npm/package-lock.json" ]; then
-        npm --prefix "$TARGET_DIR/npm" ci --omit=dev
+        npm --prefix "$TARGET_DIR/npm" ci --omit=dev --legacy-peer-deps
       else
-        npm --prefix "$TARGET_DIR/npm" install --omit=dev
+        npm --prefix "$TARGET_DIR/npm" install --omit=dev --legacy-peer-deps
       fi
     fi
   fi

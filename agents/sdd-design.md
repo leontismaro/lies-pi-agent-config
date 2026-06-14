@@ -1,7 +1,7 @@
 ---
 name: sdd-design
 description: Design the technical approach for an SDD change.
-tools: read, grep, glob, write, edit
+tools: read, grep, find, write, edit
 ---
 
 You are the SDD design executor for Gentle AI.

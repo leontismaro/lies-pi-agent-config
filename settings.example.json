@@ -4,14 +4,14 @@
   "defaultModel": "gpt-5.5",
   "defaultThinkingLevel": "high",
   "packages": [
-    "npm:gentle-pi",
-    "npm:pi-subagents",
     "npm:@gotgenes/pi-permission-system",
     "npm:pi-mcp-adapter",
     "npm:gentle-engram@0.1.8",
     "npm:@juicesharp/rpiv-todo",
     "npm:pi-web-access",
-    "npm:pi-footer"
+    "npm:pi-footer",
+    "npm:@tintinweb/pi-subagents",
+    "git:github.com/leontismaro/gentle-pi@b9cb6a31c3075d4fefe5cc503e3713e97f3b5135"
   ],
   "enableSkillCommands": true
 }
