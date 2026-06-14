@@ -27,7 +27,7 @@
           "fg": "brightWhite",
           "bg": "ansi256:131",
           "bold": false,
-          "showProvider": false
+          "showProvider": true
         }
       },
       {
