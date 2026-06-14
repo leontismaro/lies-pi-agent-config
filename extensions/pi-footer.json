@@ -1,0 +1,345 @@
+{
+  "version": 1,
+  "enabled": true,
+  "preset": "powerline-blocks",
+  "lines": [
+    [
+      {
+        "id": "separator-mqddvj3i-38fsvs",
+        "type": "separator",
+        "enabled": true,
+        "options": {
+          "fg": "ansi256:131",
+          "bg": "default",
+          "bold": false,
+          "hideWhenEmpty": true,
+          "separator": "powerline-start",
+          "text": "|"
+        }
+      },
+      {
+        "id": "model-mqddvj3i-8iy5x8",
+        "type": "model",
+        "enabled": true,
+        "options": {
+          "raw": false,
+          "icon": "Model: ",
+          "fg": "brightWhite",
+          "bg": "ansi256:131",
+          "bold": false,
+          "showProvider": false
+        }
+      },
+      {
+        "id": "separator-mqddvj3i-ljofdc",
+        "type": "separator",
+        "enabled": true,
+        "options": {
+          "fg": "pi:error",
+          "bg": "brightBlack",
+          "bold": false,
+          "hideWhenEmpty": true,
+          "separator": "powerline-right-spaced",
+          "text": "|"
+        }
+      },
+      {
+        "id": "thinking-level-mqde1qxk-2vfrbm",
+        "type": "thinking-level",
+        "enabled": true,
+        "options": {
+          "raw": true,
+          "hideWhenEmpty": false,
+          "icon": "",
+          "text": "",
+          "fg": "ansi256:10",
+          "bg": "brightBlack",
+          "bold": true
+        }
+      },
+      {
+        "id": "separator-mqddvj3i-0dfv8t",
+        "type": "separator",
+        "enabled": true,
+        "options": {
+          "fg": "brightBlack",
+          "bg": "blue",
+          "bold": false,
+          "hideWhenEmpty": true,
+          "separator": "powerline-right-spaced",
+          "text": "|"
+        }
+      },
+      {
+        "id": "git-branch-mqddvj3i-xoq7zk",
+        "type": "git-branch",
+        "enabled": true,
+        "options": {
+          "raw": true,
+          "hideWhenEmpty": false,
+          "icon": "",
+          "text": "",
+          "fg": "default",
+          "bg": "blue",
+          "bold": true,
+          "gitBranchDisplayStyle": "default",
+          "surroundLeft": "",
+          "surroundRight": ""
+        }
+      },
+      {
+        "id": "separator-mqddvj3i-fzdpde",
+        "type": "separator",
+        "enabled": true,
+        "options": {
+          "fg": "ansi256:67",
+          "bg": "ansi256:151",
+          "bold": false,
+          "hideWhenEmpty": true,
+          "separator": "powerline-right-spaced",
+          "text": "|"
+        }
+      },
+      {
+        "id": "git-diff-mqddvj3i-bim27o",
+        "type": "git-diff",
+        "enabled": true,
+        "options": {
+          "raw": true,
+          "hideWhenEmpty": false,
+          "icon": "",
+          "text": "",
+          "fg": "black",
+          "bg": "ansi256:151",
+          "bold": false,
+          "gitDiffMode": "compact"
+        }
+      },
+      {
+        "id": "separator-mqddvj3i-blfx9y",
+        "type": "separator",
+        "enabled": true,
+        "options": {
+          "fg": "ansi256:151",
+          "bg": "default",
+          "bold": false,
+          "hideWhenEmpty": true,
+          "separator": "powerline-end",
+          "text": "|"
+        }
+      }
+    ],
+    [
+      {
+        "id": "separator-mqddvj3i-128s3s",
+        "type": "separator",
+        "enabled": true,
+        "options": {
+          "fg": "ansi256:131",
+          "bg": "default",
+          "bold": false,
+          "hideWhenEmpty": true,
+          "separator": "powerline-start",
+          "text": "|"
+        }
+      },
+      {
+        "id": "input-tokens-mqddvj3i-nvh548",
+        "type": "input-tokens",
+        "enabled": true,
+        "options": {
+          "raw": false,
+          "hideWhenZero": false,
+          "icon": "In: ",
+          "fg": "brightWhite",
+          "bg": "ansi256:131",
+          "bold": false,
+          "tokenFormatStyle": "default"
+        }
+      },
+      {
+        "id": "separator-mqddvj3i-sz67pk",
+        "type": "separator",
+        "enabled": true,
+        "options": {
+          "fg": "ansi256:131",
+          "bg": "ansi256:222",
+          "bold": false,
+          "hideWhenEmpty": true,
+          "separator": "powerline-right-spaced",
+          "text": "|"
+        }
+      },
+      {
+        "id": "output-tokens-mqddvj3i-ycdu69",
+        "type": "output-tokens",
+        "enabled": true,
+        "options": {
+          "raw": false,
+          "hideWhenZero": false,
+          "icon": "Out: ",
+          "fg": "black",
+          "bg": "ansi256:222",
+          "bold": false,
+          "tokenFormatStyle": "default"
+        }
+      },
+      {
+        "id": "separator-mqddvj3i-cuv92a",
+        "type": "separator",
+        "enabled": true,
+        "options": {
+          "fg": "ansi256:222",
+          "bg": "ansi256:67",
+          "bold": false,
+          "hideWhenEmpty": true,
+          "separator": "powerline-right-spaced",
+          "text": "|"
+        }
+      },
+      {
+        "id": "cache-read-mqddvj3i-6mhep5",
+        "type": "cache-read",
+        "enabled": true,
+        "options": {
+          "raw": false,
+          "hideWhenZero": false,
+          "icon": "Cached: ",
+          "fg": "brightWhite",
+          "bg": "ansi256:67",
+          "bold": false,
+          "tokenFormatStyle": "default"
+        }
+      },
+      {
+        "id": "separator-mqddvj3i-kqvjpm",
+        "type": "separator",
+        "enabled": true,
+        "options": {
+          "fg": "ansi256:67",
+          "bg": "ansi256:151",
+          "bold": false,
+          "hideWhenEmpty": true,
+          "separator": "powerline-right-spaced",
+          "text": "|"
+        }
+      },
+      {
+        "id": "total-tokens-mqddvj3i-kaadin",
+        "type": "total-tokens",
+        "enabled": true,
+        "options": {
+          "raw": false,
+          "hideWhenZero": false,
+          "icon": "Total: ",
+          "fg": "black",
+          "bg": "ansi256:151",
+          "bold": false,
+          "tokenFormatStyle": "default"
+        }
+      },
+      {
+        "id": "separator-mqddvj3i-5xwiwf",
+        "type": "separator",
+        "enabled": true,
+        "options": {
+          "fg": "ansi256:151",
+          "bg": "default",
+          "bold": false,
+          "hideWhenEmpty": true,
+          "separator": "powerline-end",
+          "text": "|"
+        }
+      }
+    ],
+    [
+      {
+        "id": "separator-mqddvj3i-82tpt6",
+        "type": "separator",
+        "enabled": true,
+        "options": {
+          "fg": "brightYellow",
+          "bg": "black",
+          "bold": false,
+          "hideWhenEmpty": true,
+          "separator": "powerline-start",
+          "text": "|"
+        }
+      },
+      {
+        "id": "context-bar-mqddvj3i-uryxb4",
+        "type": "context-bar",
+        "enabled": true,
+        "options": {
+          "raw": false,
+          "hideWhenEmpty": false,
+          "icon": "Ctx ",
+          "text": "",
+          "fg": "ansi256:1",
+          "bg": "brightYellow",
+          "bold": true,
+          "tokenFormatStyle": "default",
+          "contextBarMode": "medium",
+          "contextConditionalColors": false,
+          "contextWarningPercent": 70,
+          "contextDangerPercent": 90,
+          "warningFg": "yellow",
+          "warningBg": "default",
+          "dangerFg": "red",
+          "dangerBg": "default"
+        }
+      },
+      {
+        "id": "separator-mqddvj3j-i3ik0k",
+        "type": "separator",
+        "enabled": true,
+        "options": {
+          "fg": "pi:customMessageText",
+          "bg": "brightYellow",
+          "bold": false,
+          "hideWhenEmpty": true,
+          "separator": "powerline-soft-right",
+          "text": "|"
+        }
+      },
+      {
+        "id": "total-time-mqddvj3j-cq8kf4",
+        "type": "total-time",
+        "enabled": true,
+        "options": {
+          "raw": true,
+          "icon": "",
+          "fg": "pi:thinkingXhigh",
+          "bg": "brightYellow",
+          "bold": false
+        }
+      },
+      {
+        "id": "separator-mqddvj3j-l7nr4f",
+        "type": "separator",
+        "enabled": true,
+        "options": {
+          "fg": "brightYellow",
+          "bg": "yellow",
+          "bold": false,
+          "hideWhenEmpty": true,
+          "separator": "powerline-end",
+          "text": "|"
+        }
+      }
+    ]
+  ],
+  "separator": "none",
+  "separatorFg": "default",
+  "separatorBg": "default",
+  "iconMode": "nerd",
+  "minimalist": false,
+  "terminal": {
+    "widthMode": "full",
+    "colorLevel": "ansi256"
+  },
+  "extensionStatusRow": {
+    "hiddenKeys": [],
+    "knownKeys": []
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "colorSources": {
+    "editor": "terminal",
+    "userMessages": "terminal",
+    "starship": "terminal"
+  }
+}

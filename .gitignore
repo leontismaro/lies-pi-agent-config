@@ -1,0 +1,51 @@
+# Secrets and credentials
+*.env
+.env
+.env.*
+!.env.example
+auth.json
+trust.json
+models.json
+mcp.json
+**/*secret*.json
+**/*secrets*.json
+**/*token*.json
+**/*credential*.json
+
+# Local Pi runtime state
+.atl/.skill-registry.cache.json
+sessions/
+run-history.jsonl
+engram-serve.log
+engram-serve.pid
+mcp-cache.json
+
+# Generated backups and local copies
+*.bak
+*.backup-*
+*.local
+*.local.*
+
+# Third-party installs and generated package contents
+npm/node_modules/
+node_modules/
+!npm/package.json
+!npm/package-lock.json
+
+# Local binaries and caches
+bin/
+git/
+.pi/
+
+# Logs and temporary files
+*.log
+*.pid
+*.jsonl
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Keep public-safe examples trackable
+!*.example.json
+!README.md

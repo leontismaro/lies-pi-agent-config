@@ -1,0 +1,17 @@
+{
+  "lastChangelogVersion": "0.79.3",
+  "defaultProvider": "axis",
+  "defaultModel": "gpt-5.5",
+  "defaultThinkingLevel": "high",
+  "packages": [
+    "npm:gentle-pi",
+    "npm:pi-subagents",
+    "npm:@gotgenes/pi-permission-system",
+    "npm:pi-mcp-adapter",
+    "npm:gentle-engram@0.1.8",
+    "npm:@juicesharp/rpiv-todo",
+    "npm:pi-web-access",
+    "npm:pi-footer"
+  ],
+  "enableSkillCommands": true
+}
