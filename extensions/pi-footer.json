@@ -13,7 +13,7 @@
           "bg": "default",
           "bold": false,
           "hideWhenEmpty": true,
-          "separator": "powerline-start",
+          "separator": "none",
           "text": "|"
         }
       },
@@ -120,7 +120,34 @@
         "type": "separator",
         "enabled": true,
         "options": {
-          "fg": "ansi256:151",
+          "fg": "brightGreen",
+          "bg": "yellow",
+          "bold": false,
+          "hideWhenEmpty": true,
+          "separator": "powerline-end",
+          "text": "|"
+        }
+      },
+      {
+        "id": "cwd-mqdglmlf-sjgvly",
+        "type": "cwd",
+        "enabled": true,
+        "options": {
+          "raw": true,
+          "icon": "",
+          "fg": "black",
+          "bg": "yellow",
+          "bold": true,
+          "cwdDisplayStyle": "full-home",
+          "segments": 4
+        }
+      },
+      {
+        "id": "separator-mqdglzgu-cpijid",
+        "type": "separator",
+        "enabled": true,
+        "options": {
+          "fg": "yellow",
           "bg": "default",
           "bold": false,
           "hideWhenEmpty": true,
@@ -139,7 +166,7 @@
           "bg": "default",
           "bold": false,
           "hideWhenEmpty": true,
-          "separator": "powerline-start",
+          "separator": "none",
           "text": "|"
         }
       },
@@ -250,6 +277,19 @@
           "separator": "powerline-end",
           "text": "|"
         }
+      },
+      {
+        "id": "separator-mqdgfyyg-6egerw",
+        "type": "separator",
+        "enabled": false,
+        "options": {
+          "fg": "ansi256:151",
+          "bg": "default",
+          "bold": false,
+          "hideWhenEmpty": true,
+          "separator": "powerline-end",
+          "text": "|"
+        }
       }
     ],
     [
@@ -262,7 +302,7 @@
           "bg": "black",
           "bold": false,
           "hideWhenEmpty": true,
-          "separator": "powerline-start",
+          "separator": "none",
           "text": "|"
         }
       },
@@ -275,7 +315,7 @@
           "hideWhenEmpty": false,
           "icon": "Ctx ",
           "text": "",
-          "fg": "ansi256:1",
+          "fg": "black",
           "bg": "brightYellow",
           "bold": true,
           "tokenFormatStyle": "default",
@@ -320,7 +360,7 @@
         "enabled": true,
         "options": {
           "fg": "brightYellow",
-          "bg": "yellow",
+          "bg": "default",
           "bold": false,
           "hideWhenEmpty": true,
           "separator": "powerline-end",
