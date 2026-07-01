@@ -54,18 +54,19 @@ taskProgress:
   complete: 0
   remaining: 0
   unchecked: []
-applyState: blocked | all_done | ready
+applyState: blocked | all_done | ready | not_applicable
 dependencies:
-  apply: blocked | ready | all_done
-  verify: blocked | ready | all_done
+  apply: blocked | ready | all_done | not_applicable
+  verify: blocked | ready | all_done | not_applicable
   sync: blocked | ready | all_done | not_applicable
-  archive: blocked | ready | all_done
+  archive: blocked | ready | all_done | not_applicable
 actionContext:
   mode: repo-local | workspace-planning
   workspaceRoot: <absolute path>
   allowedEditRoots: [<absolute paths>]
   warnings: []
 nextRecommended: <command-or-action>
+isNonAuthoritative: false  # boolean; true when the native engine is not authoritative for the store
 ```
 
 ## Apply State
@@ -73,6 +74,7 @@ nextRecommended: <command-or-action>
 - `blocked`: required apply artifacts are missing, task selection is ambiguous, or action context makes edits unsafe.
 - `all_done`: tasks artifact exists and every implementation task is checked `[x]`.
 - `ready`: tasks artifact exists, at least one implementation task remains unchecked, and edit scope is safe.
+- `not_applicable`: emitted for non-authoritative stores (see Engine Authority by Store). This is NOT a blocker.
 
 ## Dependency States
 
@@ -80,6 +82,7 @@ nextRecommended: <command-or-action>
 - `verify` is `ready` when tasks exist and either apply-progress exists or the tasks artifact shows all intended implementation work complete. Unchecked implementation tasks remain CRITICAL blockers for full archive readiness.
 - `sync` is `ready` only when verify-report exists and has no unresolved `FAIL`, `BLOCKED`, `CRITICAL`, or verification blockers. `engram`/`none` modes may mark sync `not_applicable`.
 - `archive` is `ready` only when verify-report exists, sync is complete or not applicable, and tasks are complete. CRITICAL verification issues have no override. Explicit recorded exceptions are limited to non-critical partial archives or stale-checkbox reconciliation when apply-progress/verify-report prove completion.
+- `not_applicable`: emitted for non-authoritative stores (engram, none, and both when no `openspec/` directory exists) when `nextRecommended: "resolve-via-engram"` is active. `not_applicable` is NOT a gate failure — readiness must be resolved from Engram instead of from these fields.
 
 ## Action Context Guard
 
@@ -88,6 +91,11 @@ The orchestrator MUST carry `actionContext` into any phase launch.
 - If `mode: workspace-planning` and `allowedEditRoots` is empty, stop before editing, verifying implementation ownership, syncing specs, or archiving. Treat linked repos and folders as read-only planning context.
 - If `allowedEditRoots` is present, only edit or move files within those roots.
 - If a phase cannot prove a file is inside the authoritative workspace or allowed edit roots, stop and ask for clarification.
+
+## Engine Authority by Store
+
+- `openspec` and `both` (when `openspec/` directory exists): the native status engine resolves artifact state from disk and is authoritative. Phase executors must obey it.
+- `engram`, `none`, and `both` (when `openspec/` directory does NOT exist): the native status engine cannot read Engram artifacts. It returns `nextRecommended: "resolve-via-engram"` and empty `blockedReasons`. This output is **non-authoritative**. The orchestrator must resolve readiness directly from Engram using the Engram memory tools injected by the memory provider on the change topic keys (`sdd/{change-name}/proposal`, `sdd/{change-name}/spec`, etc.) instead of relying on the engine's dependency states. The `artifactStore` field still reflects the real chosen store value (e.g. `"both"`) and must not be rewritten.
 
 ## Status Output
 

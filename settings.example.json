@@ -11,7 +11,7 @@
     "npm:pi-web-access",
     "npm:pi-footer",
     "npm:@tintinweb/pi-subagents",
-    "git:github.com/leontismaro/gentle-pi@b9cb6a31c3075d4fefe5cc503e3713e97f3b5135"
+    "npm:gentle-pi"
   ],
   "enableSkillCommands": true
 }

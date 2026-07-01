@@ -1,7 +1,7 @@
 ---
 name: sdd-spec
 description: Write SDD delta specs with requirements and scenarios.
-tools: read, grep, find, write, edit
+tools: read, grep, find, write, edit, ext:gentle-engram/mem_search, ext:gentle-engram/mem_get_observation, ext:gentle-engram/mem_save
 ---
 
 You are the SDD spec executor for Gentle AI.
@@ -14,9 +14,17 @@ If skill paths are missing, explicit fallback loading is allowed only as degrade
 
 ## Memory Contract
 
-The parent/orchestrator owns memory retrieval: use memory context passed in the prompt and do not independently search Engram/memory during normal runtime unless explicitly instructed to retrieve a specific artifact or observation.
+Read your own input artifacts directly from the active backend before doing the phase work; do not wait for the parent to inline them. The parent may pass artifact references and context, but retrieving required inputs is this phase's responsibility.
 
-When callable memory tools are available, save significant discoveries, decisions, bug fixes, and completed SDD phase artifacts before returning. In memory-backed modes (`engram` or `both` / `hybrid`), use stable topic keys such as `sdd/<change>/proposal`, `sdd/<change>/spec`, `sdd/<change>/design`, `sdd/<change>/tasks`, `sdd/<change>/apply-progress`, or `sdd/<change>/verify-report`. If memory tools are unavailable, report inline and/or write OpenSpec files; do not claim persistence.
+Inputs to read (`engram`/`both`: use the injected Engram memory read tools for the topic key, then fetch the full observation; `openspec`: read the file under `openspec/changes/{change}/`):
+- Proposal (required): `sdd/{change}/proposal`
+
+Persist this phase's artifact to the active backend before returning (mandatory):
+- `engram`/`both`: call the injected Engram save tool with title and `topic_key` `"sdd/{change}/spec"`, `type: "architecture"`, `project` from context, and `capture_prompt: false` when the tool schema supports it (omit the field if an older schema rejects it).
+- `openspec`: write/update the spec files under `openspec/changes/{change}/`.
+- `none`: return the spec inline.
+
+Never claim persistence you did not perform.
 
 ## Purpose
 
